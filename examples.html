@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="tilewriter.js">
+        </script>
+        <title>Teste do TileWriter</title>
+    </head>
+    <body>
+        <h1 style="text-align:center">tilewriter examples</h1>
+        <div style="margin:40px;border:2px solid; padding:8px;">
+            <div id="playground1">
+                Some Text:
+            </div>
+            <hr/>
+            <div id="playground2">
+                It's me, Mario:
+            </div>
+            <hr/>
+            <p>
+                An incomplete palette, centered:
+            </p>
+            <div id="playground3" style="border:1px solid;width:380px;padding:4px;margin-left:auto;margin-right:auto;text-align:center;">
+            </div>
+        </div>
+        <script type="text/javascript">
+            tilewriter.drawRow("#playground1", "       ");
+            tilewriter.drawRow("#playground1", "  XXX  ");
+            tilewriter.drawRow("#playground1", " X   X ");
+            tilewriter.drawRow("#playground1", " XXXXX ");
+            tilewriter.drawRow("#playground1", " X   X ");
+            tilewriter.drawRow("#playground1", " X   X ");
+            tilewriter.drawRow("#playground1", "       ");
+            
+            tilewriter.spacing = 0;
+            tilewriter.colors = ["", "#EA590C", "#AC7C00", "#FFA440"];
+            tilewriter.drawRow("#playground2", "   111111    ");
+            tilewriter.drawRow("#playground2", "  1111111111 ");
+            tilewriter.drawRow("#playground2", "  22233233   ");
+            tilewriter.drawRow("#playground2", " 23233323333 ");
+            tilewriter.drawRow("#playground2", " 232233323333");
+            tilewriter.drawRow("#playground2", " 22333322222 ");
+            tilewriter.drawRow("#playground2", "   33333333  ");
+            tilewriter.drawRow("#playground2", "  2232222    ");
+            tilewriter.drawRow("#playground2", " 22212212222 ");
+            tilewriter.drawRow("#playground2", "2222111122222");
+            tilewriter.drawRow("#playground2", "3321311312333");
+            tilewriter.drawRow("#playground2", "3331111113333");
+            tilewriter.drawRow("#playground2", "3311111111333");
+            tilewriter.drawRow("#playground2", "  1111 1111  ");
+            tilewriter.drawRow("#playground2", " 2222   2222 ");
+            tilewriter.drawRow("#playground2", "22222   22222");
+            
+            tilewriter.reset();
+            tilewriter.size = 40;
+            tilewriter.colors = {
+                "A": "blue",
+                "B": "red",
+                "C": "green",
+				"E": "yellow"
+            };
+            tilewriter.drawRow("#playground3", "A B C D E");
+            tilewriter.drawRow("#playground3", "E D C B A");
+        </script>
+    </body>
+</html>
