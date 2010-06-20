@@ -31,7 +31,7 @@ var tilewriter = {
     drawText: function(element, text){
         for (j = 0; j < 8; j++) {
             var line = '';
-            for (i in text) {
+            for (i = 0; i < text.length; i++) {
                 var c = text.charAt(i);
                 var hex = this.font[c];
                 if (hex) {
@@ -49,7 +49,7 @@ var tilewriter = {
         if (!this.colors) {
             this.colors = ['black'];
         }
-        for (i in line) {
+        for (i = 0; i < line.length; i++) {
             var c = line[i];
             var color = ''
             if (c != ' ') {
