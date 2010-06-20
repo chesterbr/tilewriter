@@ -1,5 +1,80 @@
+//
+// tilewriter - a simple tile drawing tool.
+// It requires jQuery, any version will do.
+// Please get a minified version at http://github.com/chesterbr/tilewriter
+// 
+// Copyright (c) 2010 Carlos Duarte do Nascimento (Chester)
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this
+// software and associated documentation files (the "Software"), to deal in the Software
+// without restriction, including without limitation the rights to use, copy, modify, merge,
+// publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
+// to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+// PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+// DEALINGS IN THE SOFTWARE.
+//
+
 var tilewriter = {
 
+    // Writes a text in tile-format on element, with a cool, 80-ish font from England ;-)
+    drawText: function(element, text){
+        for (j = 0; j < 8; j++) {
+            var line = '';
+            for (i in text) {
+                var c = text.charAt(i);
+                var hex = this.font[c];
+                if (hex) {
+                    line += this._h2b[hex.charAt(j * 2)];
+                    line += this._h2b[hex.charAt(j * 2 + 1)];
+                }
+            }
+            this.drawRow(element, line);
+        }
+    },
+    
+	// Draws a tile row on element
+    drawRow: function(element, line){
+        var html = '<div style="margin:0px; padding:0px; border:0px;height:' + (this.size + this.spacing) + 'px;">';
+        if (!this.colors) {
+            this.colors = ['black'];
+        }
+        for (i in line) {
+            var c = line[i];
+            var color = ''
+            if (c != ' ') {
+                color = this.colors[c];
+                if (!color) {
+                    color = this.colors[0];
+                }
+            }
+            html += this.tile(color);
+        }
+        html += this.linebreak;
+        jQuery(element).append(html);
+    },
+    
+	// Resets the default properties (check code for possible properties)
+    reset: function(){
+		// Tile size
+        this.size = 16;
+		// Spacing between tiles
+        this.spacing = 1;
+		// Colors used on tiles. Can be:
+		//   - a single color in an array
+		//   - an array which will map to numbers on drawRow
+		//   - a "dictionary" object that maps characters on drawRow to colors
+		//   (see examples.html) 
+        this.colors = ['black'];
+    },
+    
     tilestyle: 'display:inline-block;border:0px;padding:0px;',
     linebreak: '<br/>',
     
@@ -10,23 +85,6 @@ var tilewriter = {
             colorstyle = 'background-color: ' + color;
         }
         return '<span style="' + sizestyle + ';' + this.tilestyle + ';' + colorstyle + '"></span>';
-    },
-    
-    drawText: function(element, text){
-        for (j = 0; j < 8; j++) {
-			var line = '';
-            for (i in text) {
-                var c = text.charAt(i);
-                var hex = this.font[c];
-                if (hex) {
-                    line += this._h2b[hex.charAt(j * 2)];
-                    line += this._h2b[hex.charAt(j * 2 + 1)];
-                }
-            }
-			this.drawRow(element, line);
-        }
-        
-        //document.write(this.tile(text));
     },
     
     font: {
@@ -145,34 +203,8 @@ var tilewriter = {
         'D': '11 1',
         'E': '111 ',
         'F': '1111'
-    },
-    
-    drawRow: function(element, line){
-        var html = '<div style="margin:0px; padding:0px; border:0px;height:' + (this.size + this.spacing) + 'px;">';
-        if (!this.colors) {
-            this.colors = ['black'];
-        }
-        for (i in line) {
-            var c = line[i];
-            var color = ''
-            if (c != ' ') {
-                color = this.colors[c];
-                if (!color) {
-                    color = this.colors[0];
-                }
-            }
-            html += this.tile(color);
-        }
-        html += this.linebreak;
-        jQuery(element).append(html);
-    },
-    
-    reset: function(){
-        this.size = 16;
-        this.spacing = 1;
-        this.colors = ['black'];
     }
-    
+
 }
 
 tilewriter.reset();
