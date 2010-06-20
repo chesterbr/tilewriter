@@ -1,7 +1,8 @@
 //
 // tilewriter - a simple tile drawing tool.
 // It requires jQuery, any version will do.
-// Please get a minified version at http://github.com/chesterbr/tilewriter
+// You should use a minified version. Current (0.1) can be found at 
+//    http://chester.blog.br/tilewriter/tilewriter-0.1-min.js
 // 
 // Copyright (c) 2010 Carlos Duarte do Nascimento (Chester)
 //
