@@ -41,7 +41,7 @@ var tilewriter = {
         }
     },
     
-	// Draws a tile row on element
+    // Draws a tile row on element
     drawRow: function(element, line){
         var html = '<div style="margin:0px; padding:0px; border:0px;height:' + (this.size + this.spacing) + 'px;">';
         if (!this.colors) {
@@ -62,17 +62,17 @@ var tilewriter = {
         jQuery(element).append(html);
     },
     
-	// Resets the default properties (check code for possible properties)
+    // Resets the default properties (check code for possible properties)
     reset: function(){
-		// Tile size
+        // Tile size
         this.size = 16;
-		// Spacing between tiles
+        // Spacing between tiles
         this.spacing = 1;
-		// Colors used on tiles. Can be:
-		//   - a single color in an array
-		//   - an array which will map to numbers on drawRow
-		//   - a "dictionary" object that maps characters on drawRow to colors
-		//   (see examples.html) 
+        // Colors used on tiles. Can be:
+        //   - a single color in an array
+        //   - an array which will map to numbers on drawRow
+        //   - a "dictionary" object that maps characters on drawRow to colors
+        //   (see examples.html) 
         this.colors = ['black'];
     },
     
