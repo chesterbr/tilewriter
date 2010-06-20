@@ -3,8 +3,8 @@
 // http://github.com/chesterbr/tilewriter
 //
 // It requires jQuery, any version will do.
-// You should use a minified version. Current version (0.1) can be found at 
-//    http://chester.blog.br/tilewriter/tilewriter-0.1-min.js
+// You should use a minified version. Current version can be found at 
+//    http://chester.blog.br/tilewriter/tilewriter-VERSIONNUMBER-min.js
 // 
 // Copyright (c) 2010 Carlos Duarte do Nascimento (Chester)
 //
