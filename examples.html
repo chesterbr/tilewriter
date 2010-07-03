@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
         </script>
-        <script type="text/javascript" src="tilewriter-0.2-min.js">
+        <script type="text/javascript" src="tilewriter.js">
         </script>
         <title>Teste do TileWriter</title>
     </head>
@@ -12,12 +12,19 @@
         <h1 style="text-align:center">tilewriter examples</h1>
         <div style="margin:40px;border:2px solid; padding:8px;">
             <div id="playground1">
-                Some Text:
+                Text widh different tile sizes:
+            </div>
+            <br/>
+            <hr/>
+            <div id="playground1b">
+                Text Width:
             </div>
             <br/>
             <hr/>
             <div id="playground2">
-                It's me, Mario:<br/><br/>
+                It's me, Mario:
+                <br/>
+                <br/>
             </div>
             <br/>
             <hr/>
@@ -36,6 +43,12 @@
             tilewriter.size = 4;
             tilewriter.spacing = 1;
             tilewriter.drawText("#playground1", "The quick brown fox JUMPS!");
+            
+            tilewriter.reset();
+            for (w = 8; w >= 5; w--) {
+                tilewriter.textwidth = w;
+                tilewriter.drawText("#playground1b", "width:" + w);
+            }
             
             tilewriter.reset();
             tilewriter.spacing = 0;
