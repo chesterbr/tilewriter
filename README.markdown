@@ -10,6 +10,10 @@ It depends on jQuery, so you would include with code like this:
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
     <script src="http://chester.me/tilewriter/tilewriter-0.2-min.js" type="text/javascript"></script>
+    
+Add a container for the drawing, such as:
+
+    <div id="div_mario"></div>
 
 And use it this way:
 
@@ -38,11 +42,10 @@ This will create a drawing like the one below:
 
 ![](http://chester.me/wp-content/uploads/2010/06/mario.png)
 
-All parameters are optional. You can also write text:
+All parameters are optional - try varying the spacing for a more "8-bit" look. You can also write text (the library has a built-in font borrowed from the ZX Spectrum, thanks to http://homepage.ntlworld.com/wholehog/stuart/fonts/index.html):
 
-    tilewriter.drawText("#div_teste_2","Hello");
+    tilewriter.drawText("#div_teste_2","Hello, world!");
 
-For more examples, try this blog post (in Portuguese, but Google-translatable): http://chester.me/archives/2010/06/tilewriter-desenhando-ladrilhos-em-javascript.html
 
 License
 -------
