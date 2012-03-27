@@ -1,7 +1,7 @@
 tilewriter - README
 ===================
 
-This is a (very simple) library that draws pictures (and text) formed by "tiles" using block elements (instead of, say, HTML5 canvas), written mostly as a visual test.
+This is a (very simple) library that draws pictures (and text) formed by "tiles" using block elements (instead of, say, drawing over an HTML5 canvas). It was written mostly as a visual test, but may be useful for generating this kind of illustration dynamically on older browsers.
 
 Usage
 -----
