@@ -42,7 +42,7 @@ This will create a drawing like the one below:
 
 ![](http://chester.me/wp-content/uploads/2010/06/mario.png)
 
-All parameters are optional - try varying the spacing for a more "8-bit" look. You can also write text (the library has a built-in font borrowed from the ZX Spectrum, thanks to http://homepage.ntlworld.com/wholehog/stuart/fonts/index.html):
+All parameters are optional - try varying the spacing for a more "8-bit" look. You can also write text (the library has a built-in font borrowed from the ZX Spectrum, thanks to http://homepage.ntlworld.com/wholehog/stuart/fonts/index.html ):
 
     tilewriter.drawText("#div_teste_2","Hello, world!");
 
